@@ -1,0 +1,45 @@
+{
+    "screens": {
+        "landingScreen": {
+            "title": "Welcome",
+            "description": "We have so many movies for you to watch!",
+            "background": "#10a4e8",
+            "showOnLaunch": true,
+            "buttons": [
+                {
+                    "title": "Watch Movies",
+                    "action": {
+                        "goTo": "moviesScreen"
+                    }
+                },
+                {
+                    "title": "Exit App",
+                    "action": {
+                        "exitApp": true
+                    }
+                }
+            ]
+        },
+        "moviesScreen": {
+            "title": "Movies",
+            "description": "Check out these classic shows!",
+            "background": "#fcba03",
+            "showOnLaunch": null,
+            "movies": [
+                {
+                    "title": "HLS Stream",
+                    "description": "This is an HLS Stream",
+                    "format": "hls",
+                    "streamURL": "http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8"
+                },
+                {
+                    "title": "DRM Stream",
+                    "description": "This is a PlayReady/WideVine Stream",
+                    "format": "widevine",
+                    "streamURL": "https://storage.googleapis.com/wvmedia/cenc/h264/tears/tears.mpd",
+                    "licenseURL": "https://proxy.uat.widevine.com/proxy?provider=widevine_test"
+                }
+            ]
+        }
+    }
+}
