@@ -8,8 +8,6 @@ sub main()
     while(true)
         msg = wait(0, m.port)
         msgType = type(msg)
-        if msgType = "roSGScreenEvent"
-            if msg.isScreenClosed() then return
-        end if
+        if msgType = "roSGScreenEvent" AND msg.isScreenClosed() then return
     end while
 end sub

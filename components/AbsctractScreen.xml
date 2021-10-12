@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<component name="AbstractScreen" extends="Group">
+    <script type="text/brightscript" uri="AbstractScreen.brs" />
+    <interface>
+        <field id="config" type="assocarray" onChange="configureScreen" />
+    </interface>
+    <children>
+        <Label
+            id="screenTitle"
+            horizAlign="center"
+            vertAlign="center"
+            font="font:LargeBoldSystemFont"
+            />
+        <Label
+            id="screenDescription"
+            horizAlign="center"
+            vertAlign="center"
+            font="font:MediumSystemFont"
+            />
+    </children>
+</component>
