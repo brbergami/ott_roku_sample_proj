@@ -33,6 +33,6 @@ sub screenInteraction(interactionEvent as Object)
         goToScreen = createScreen(actionData, m.appConfig.screens[actionData])
         m.top.getChild(0).appendChild(goToScreen)
     else if actionKey = "exitApp"
-        '
+        m.top.exitApp = true
     end if
 end sub

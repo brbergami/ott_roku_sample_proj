@@ -21,3 +21,15 @@ sub configureScreen(config as Object)
     m.description.translation = [m.displaySize.w * 0.38, m.displaySize.h * 0.33] ' I should substract here witdh and height of the Label too, but doesn't seems to update (0) after setting the text
     m.description.font.size   = 24
 end sub
+
+function onKeyEvent(key as String, press as Boolean) as Boolean
+    handled = false
+    if press
+        counter = m.top.getChildCount()
+        if key = "back" AND counter > 1
+            m.top.removeChildIndex(counter-1)
+            handled = true
+        end if
+    end if
+    return handled
+end function
