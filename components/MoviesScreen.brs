@@ -9,4 +9,9 @@ sub configureScreen(config as Object)
     m.description.text        = config.description
     m.description.translation = [m.displaySize.w * 0.38, m.displaySize.h * 0.33] ' I should substract here witdh and height of the Label too, but doesn't seems to update (0) after setting the text
     m.description.font.size   = 24
+    createGrid(config.movies)
+end sub
+
+sub createGrid(movies as Object)
+    'm.top.createChild("")
 end sub
