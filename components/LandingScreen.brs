@@ -1,3 +1,15 @@
+sub init()
+    m.displaySize = createObject("roDeviceInfo").getDisplaySize()
+    _bindComponents()
+end sub
+
+sub _bindComponents()
+    m.title       = m.top.findNode("screenTitle")
+    m.description = m.top.findNode("screenDescription")
+    m.background  = m.top.findNode("background")
+    m.buttonGroup = m.top.findNode("buttonGroup")
+end sub
+
 sub configureScreen(config as Object)
     config = config.getData()
     m.background.width        = m.displaySize.w
@@ -13,19 +25,18 @@ sub configureScreen(config as Object)
 end sub
 
 sub createButtons(buttons as Object)
-    buttonGroup = m.top.createChild("ButtonGroup")
-    m.buttonLabels = []
+    m.buttonLabels  = []
     m.actionButtons = {}
     for each button in buttons
         m.buttonLabels.push(button.title)
         m.actionButtons[button.title] = button.action
     end for
-    buttonGroup.translation    = [m.displaySize.w * 0.43, m.displaySize.h * 0.6]
-    buttonGroup.buttons        = m.buttonLabels
-    buttonGroup.iconUri        = ""
-    buttonGroup.focusedIconUri = ""
-    buttonGroup.setFocus(true)
-    buttonGroup.observeField("buttonSelected", "onButtonSelected")
+    m.buttonGroup.translation    = [m.displaySize.w * 0.43, m.displaySize.h * 0.6]
+    m.buttonGroup.buttons        = m.buttonLabels
+    m.buttonGroup.iconUri        = ""
+    m.buttonGroup.focusedIconUri = ""
+    m.buttonGroup.setFocus(true)
+    m.buttonGroup.observeField("buttonSelected", "onButtonSelected")
 end sub
 
 sub onButtonSelected(buttonPress as Object)

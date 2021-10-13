@@ -4,4 +4,9 @@
     <interface>
         <field id="screenAction" type="assocarray" />
     </interface>
+    <children>
+        <ButtonGroup
+            id="buttonGroup"
+            />
+    </children>
 </component>
