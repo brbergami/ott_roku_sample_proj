@@ -3,19 +3,24 @@
     <script type="text/brightscript" uri="AbstractScreen.brs" />
     <interface>
         <field id="config" type="assocarray" onChange="configureScreen" />
+        <field id="screenAction" type="assocarray" />
     </interface>
     <children>
-        <Label
-            id="screenTitle"
-            horizAlign="center"
-            vertAlign="center"
-            font="font:LargeBoldSystemFont"
-            />
-        <Label
-            id="screenDescription"
-            horizAlign="center"
-            vertAlign="center"
-            font="font:MediumSystemFont"
-            />
+        <Rectangle
+            id="background"
+            >
+            <Label
+                id="screenTitle"
+                horizAlign="center"
+                vertAlign="center"
+                font="font:LargeBoldSystemFont"
+                />
+            <Label
+                id="screenDescription"
+                horizAlign="center"
+                vertAlign="center"
+                font="font:MediumSystemFont"
+                />
+        </Rectangle>
     </children>
 </component>
