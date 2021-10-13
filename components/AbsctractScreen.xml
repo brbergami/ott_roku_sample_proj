@@ -3,7 +3,6 @@
     <script type="text/brightscript" uri="AbstractScreen.brs" />
     <interface>
         <field id="config" type="assocarray" onChange="configureScreen" />
-        <field id="screenAction" type="assocarray" />
     </interface>
     <children>
         <Rectangle

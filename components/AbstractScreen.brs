@@ -20,25 +20,4 @@ sub configureScreen(config as Object)
     m.description.text        = config.description
     m.description.translation = [m.displaySize.w * 0.38, m.displaySize.h * 0.33] ' I should substract here witdh and height of the Label too, but doesn't seems to update (0) after setting the text
     m.description.font.size   = 24
-    m.buttons                 = config.buttons
-    if config.buttons <> invalid then createButtons(m.buttons)
 end sub
-
-sub createButtons(buttons as Object)
-    buttonGroup = m.top.createChild("ButtonGroup")
-    buttonGroup.translation = [0, 0]
-    buttonGroup.layoutDirection = "horiz"
-    actionMap = {}
-    for each button in buttons
-        actionMap[button.title] = button.action
-    end for
-end sub
-
-'{
-'    "Watch Movies": {
-'        "goTo": "moviesScreen"
-'    },
-'    "Exit App": {
-'        "exitApp": true
-'    }
-'}

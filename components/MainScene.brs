@@ -15,7 +15,12 @@ sub launchWithConfig(responseEvent as Object)
         screenObject.config = appConfig.screens[screen]
         if appConfig.screens[screen].showOnLaunch <> invalid
             m.top.appendChild(screenObject)
-            m.landingScreen = screen
+    m.appConfig = responseEvent.getData()
+    for each screen in m.appConfig.screens
+        if m.appConfig.screens[screen].showOnLaunch <> invalid
+            landingScreen = createScreen(screen, m.appConfig.screens[screen])
+            landingScreen.observeField("screenAction", "screenInteraction")
+            m.top.appendChild(landingScreen)
         end if
         m.screenStack[screen] = screenObject
     end for
@@ -26,3 +31,14 @@ end sub
 ' end function
 
 
+sub screenInteraction(interactionEvent as Object)
+    interaction = interactionEvent.getData()
+    actionKey   = interaction.keys()[0]
+    actionData  = interaction[actionKey]
+    if actionKey = "goTo"
+        goToScreen = createScreen(actionData, m.appConfig.screens[actionData])
+        m.top.getChild(0).appendChild(goToScreen)
+    else if actionKey = "exitApp"
+        '
+    end if
+end sub
