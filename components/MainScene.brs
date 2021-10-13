@@ -9,12 +9,6 @@ end sub
 sub launchWithConfig(responseEvent as Object)
     m.task.unobserveField("response")
     m.task.control = "stop"
-    appConfig = responseEvent.getData()
-    for each screen in appConfig.screens
-        screenObject = createObject("roSGNode", "AbstractScreen")
-        screenObject.config = appConfig.screens[screen]
-        if appConfig.screens[screen].showOnLaunch <> invalid
-            m.top.appendChild(screenObject)
     m.appConfig = responseEvent.getData()
     for each screen in m.appConfig.screens
         if m.appConfig.screens[screen].showOnLaunch <> invalid
@@ -22,14 +16,14 @@ sub launchWithConfig(responseEvent as Object)
             landingScreen.observeField("screenAction", "screenInteraction")
             m.top.appendChild(landingScreen)
         end if
-        m.screenStack[screen] = screenObject
     end for
 end sub
 
-' function onKeyEvent(key as String, press as Boolean) as Boolean
-'
-' end function
-
+function createScreen(screen as String, withConfig as Object) as Object
+    screenObject = createObject("roSGNode", screen)
+    screenObject.config = withConfig
+    return screenObject
+end function
 
 sub screenInteraction(interactionEvent as Object)
     interaction = interactionEvent.getData()
