@@ -8,7 +8,7 @@ sub requestConfig()
     port = createObject("roMessagePort")
     httpTransfer = createObject("roURLTransfer")
     httpTransfer.setPort(port)
-    httpTransfer.setURL("https://redspace-roku-code-challenge.s3.amazonaws.com/app.json")
+    httpTransfer.setURL("https://github.com/brbergami/ott_roku_sample_proj/blob/main/config/app.json")
     httpTransfer.setCertificatesFile("common:/certs/ca-bundle.crt")
     httpTransfer.initClientCertificates()
 
@@ -21,4 +21,3 @@ sub requestConfig()
 
     m.top.response = config
 end sub
-
