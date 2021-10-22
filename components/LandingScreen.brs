@@ -31,10 +31,8 @@ sub createButtons(buttons as Object)
         m.buttonLabels.push(button.title)
         m.actionButtons[button.title] = button.action
     end for
-    m.buttonGroup.translation    = [m.displaySize.w * 0.43, m.displaySize.h * 0.6]
-    m.buttonGroup.buttons        = m.buttonLabels
-    m.buttonGroup.iconUri        = ""
-    m.buttonGroup.focusedIconUri = ""
+    m.buttonGroup.translation = [m.displaySize.w * 0.5, m.displaySize.h * 0.6]
+    m.buttonGroup.buttons     = m.buttonLabels
     m.buttonGroup.setFocus(true)
     m.buttonGroup.observeField("buttonSelected", "onButtonSelected")
 end sub
