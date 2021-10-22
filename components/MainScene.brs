@@ -1,9 +1,9 @@
 sub init()
+    m.top.backgroundUri = ""
     m.task = createObject("roSGNode", "ConfigTask")
     m.task.observeField("response", "launchWithConfig")
     m.task.control = "run"
     m.screenStack = {}
-    m.top.backgroundUri = ""
 end sub
 
 sub launchWithConfig(responseEvent as Object)

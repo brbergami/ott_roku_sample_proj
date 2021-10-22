@@ -2,5 +2,13 @@
 <component name="MoviesScreen" extends="AbstractScreen">
     <script type="text/brightscript" uri="MoviesScreen.brs" />
     <children>
+        <RowList
+            id="rowList"
+            itemComponentName="BasicTile"
+            itemSize="[300, 200]"
+            itemSpacing="[40, 40]"
+            rowFocusAnimationStyle="fixedFocusWrap"
+            numRows="1"
+            />
     </children>
 </component>

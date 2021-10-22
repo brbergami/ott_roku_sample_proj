@@ -1,3 +1,20 @@
+sub init()
+    m.displaySize = createObject("roDeviceInfo").getDisplaySize() ' TBD: get this only from abstract class
+    _bindComponents()
+    _applyStyles()
+end sub
+
+sub _bindComponents()
+    m.title       = m.top.findNode("screenTitle")
+    m.description = m.top.findNode("screenDescription")
+    m.background  = m.top.findNode("background")
+    m.rowList     = m.top.findNode("rowList")
+end sub
+
+sub _applyStyles()
+    m.rowList.translation = [m.displaySize.w * 0.25, m.displaySize.h * 0.66]
+end sub
+
 sub configureScreen(config as Object)
     config = config.getData()
     m.background.width        = m.displaySize.w
@@ -13,5 +30,4 @@ sub configureScreen(config as Object)
 end sub
 
 sub createGrid(movies as Object)
-    'm.top.createChild("")
 end sub
