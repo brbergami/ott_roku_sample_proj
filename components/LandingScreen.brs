@@ -52,6 +52,10 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
         else if key = "right"
             m.buttonGroup.focusButton = 1
             handled = true
+        else if key = "up"
+            handled = true
+        else if key = "down"
+            handled = true
         end if
     end if
     return handled

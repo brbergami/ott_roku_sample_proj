@@ -13,6 +13,7 @@
             itemSpacings="[20,0]"
             iconUri=""
             focusedIconUri=""
+            minWidth="200"
             />
     </children>
 </component>
