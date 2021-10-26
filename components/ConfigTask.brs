@@ -8,7 +8,7 @@ sub requestConfig()
     port = createObject("roMessagePort")
     httpTransfer = createObject("roURLTransfer")
     httpTransfer.setPort(port)
-    httpTransfer.setURL("https://github.com/brbergami/ott_roku_sample_proj/blob/main/config/app.json")
+    httpTransfer.setURL("https://raw.githubusercontent.com/brbergami/ott_roku_sample_proj/main/config/app.json")
     httpTransfer.setCertificatesFile("common:/certs/ca-bundle.crt")
     httpTransfer.initClientCertificates()
 
