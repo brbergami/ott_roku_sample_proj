@@ -3,7 +3,7 @@
         "landingScreen": {
             "title": "Welcome",
             "description": "We have so many movies for you to watch!",
-            "background": "#10a4e8",
+            "background": "#242936",
             "showOnLaunch": true,
             "buttons": [
                 {
@@ -23,7 +23,7 @@
         "moviesScreen": {
             "title": "Movies",
             "description": "Check out these classic shows!",
-            "background": "#fcba03",
+            "background": "#1f2430",
             "showOnLaunch": null,
             "movies": [
                 {
