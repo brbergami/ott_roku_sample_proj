@@ -5,29 +5,24 @@ sub init()
 end sub
 
 sub _bindComponents()
-    m.title       = m.top.findNode("screenTitle")
-    m.description = m.top.findNode("screenDescription")
-    m.background  = m.top.findNode("background")
-    m.rowList     = m.top.findNode("rowList")
+    m.overhang   = m.top.findNode("overhang")
+    m.background = m.top.findNode("background")
+    m.rowList    = m.top.findNode("rowList")
 end sub
 
 sub _applyStyles()
     m.rowList.translation = [m.displaySize.w * 0.25, m.displaySize.h * 0.66]
 end sub
 
-sub configureScreen(config as Object)
+sub configureScreen(config as Object) ' Decouple this better from parent class
     config = config.getData()
     m.background.width        = m.displaySize.w
     m.background.height       = m.displaySize.h
     m.background.color        = config.background
-    m.title.text              = config.title
-    m.title.translation       = [m.displaySize.w * 0.45, m.displaySize.h * 0.25] ' well, seems like SG getDisplaySize reports max 720p screen on old devices and renders ugly..
-    m.title.font.size         = 48
-    m.description.text        = config.description
-    m.description.translation = [m.displaySize.w * 0.38, m.displaySize.h * 0.33] ' I should substract here witdh and height of the Label too, but doesn't seems to update (0) after setting the text
-    m.description.font.size   = 24
+    m.overhang.title          = config.title
     createGrid(config.movies)
 end sub
 
 sub createGrid(movies as Object)
+
 end sub

@@ -6,20 +6,9 @@
     </interface>
     <children>
         <Rectangle
-            id="background"
-            >
-            <Label
-                id="screenTitle"
-                horizAlign="center"
-                vertAlign="center"
-                font="font:LargeBoldSystemFont"
-                />
-            <Label
-                id="screenDescription"
-                horizAlign="center"
-                vertAlign="center"
-                font="font:MediumSystemFont"
-                />
-        </Rectangle>
+            id="background" />
+        <Overhang
+            id="overhang"
+            color="0x0000004D" />
     </children>
 </component>
