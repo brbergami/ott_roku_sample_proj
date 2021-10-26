@@ -7,8 +7,10 @@
     <children>
         <ButtonGroup
             id="buttonGroup"
-            horizAlignment="center"
+            layoutDirection="horiz"
+            horizAlignment="left"
             vertAlignment="center"
+            itemSpacings="[20,0]"
             iconUri=""
             focusedIconUri=""
             />
