@@ -38,24 +38,13 @@ end sub
 function onKeyEvent(key as String, press as Boolean) as Boolean
     handled = false
     if press
-        counter = m.top.getChildCount()
-        if key = "back"
-            if counter > 2
-                m.top.removeChildIndex(counter-1)
-                handled = true
-            else
-                handled = true
-            end if
-        else if key = "left"
+        if key = "left"
             m.buttonGroup.focusButton = 0
             handled = true
         else if key = "right"
             m.buttonGroup.focusButton = 1
             handled = true
-        else if key = "up"
-            handled = true
-        else if key = "down"
-            handled = true
+        ' TBD: Check the annoying vertical navigation that cannot be overriden with just layoutDirection
         end if
     end if
     return handled

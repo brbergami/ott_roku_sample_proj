@@ -21,7 +21,7 @@ function onKeyEvent(key as String, press as Boolean) as Boolean
     if press
         counter = m.top.getChildCount()
         if key = "back"
-            if counter > 2
+            if counter > 3
                 m.top.removeChildIndex(counter-1)
                 handled = true
             else
