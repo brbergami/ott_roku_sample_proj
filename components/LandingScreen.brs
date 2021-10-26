@@ -34,3 +34,25 @@ end sub
 sub onButtonSelected(buttonPress as Object)
     m.top.screenAction = m.actionButtons[m.buttonLabels[buttonPress.getData()]]
 end sub
+
+function onKeyEvent(key as String, press as Boolean) as Boolean
+    handled = false
+    if press
+        counter = m.top.getChildCount()
+        if key = "back"
+            if counter > 2
+                m.top.removeChildIndex(counter-1)
+                handled = true
+            else
+                handled = true
+            end if
+        else if key = "left"
+            m.buttonGroup.focusButton = 0
+            handled = true
+        else if key = "right"
+            m.buttonGroup.focusButton = 1
+            handled = true
+        end if
+    end if
+    return handled
+end function
